@@ -1,0 +1,12 @@
+.DS_Store
+.serena/
+.system/
+implementation/
+llm-veil/
+plan-comprehension-check/
+prototype-planning/
+prototyping/
+red-team-review/
+review-fix-loop/
+solution-design/
+work-breakdown/
