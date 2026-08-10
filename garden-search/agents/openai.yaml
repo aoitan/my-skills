@@ -1,0 +1,4 @@
+interface:
+  display_name: "Garden Search"
+  short_description: "Digital Gardenを段階的に探索して必要な知識だけ取得"
+  default_prompt: "Use $garden-search to explore my Digital Garden and retrieve only the nodes needed for this question."

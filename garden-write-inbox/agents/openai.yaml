@@ -1,0 +1,7 @@
+interface:
+  display_name: "Garden Write Inbox"
+  short_description: "会話の庭候補をQuartz Inboxへ安全に保存"
+  default_prompt: "Use $garden-write-inbox to save this conversation as a new Quartz Inbox note."
+
+policy:
+  allow_implicit_invocation: false
