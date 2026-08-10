@@ -12,7 +12,7 @@ from pathlib import Path
 from typing import Any, Iterable
 
 
-DEFAULT_ROOT = Path("/Users/aoitan/workspace/gurden/quartz/content")
+DEFAULT_ROOT = Path("/path/to/gurden/content")
 WIKILINK_RE = re.compile(r"(?<!!)\[\[([^\[\]]+?)\]\]")
 MARKDOWN_LINK_RE = re.compile(r"(?<!!)\[([^\]]+)\]\(([^)]+)\)")
 FENCE_RE = re.compile(r"^\s*(```|~~~)")
