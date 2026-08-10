@@ -13,7 +13,7 @@ Use this precedence:
 
 1. A root explicitly supplied by the user
 2. `GARDEN_ROOT`
-3. `/Users/aoitan/workspace/gurden/quartz/content`
+3. `/path/to/garden/content`
 
 Pass the selected root to every command with `--root`. Treat the spelling `gurden` as the current local path, not as a general convention.
 
