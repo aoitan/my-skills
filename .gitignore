@@ -1,13 +1,26 @@
-.DS_Store
-.serena/
-.system/
-implementation/
-llm-veil/
-plan-comprehension-check/
-prototype-planning/
-prototyping/
-red-team-review/
-review-fix-loop/
-solution-design/
-work-breakdown/
+# Default deny: only explicitly published skills and repository files are tracked.
+/*
+
+# Repository files
+!/.gitignore
+!/EXTERNAL_SKILLS.md
+!/README.md
+
+# Skills published from this repository
+!/architect-coding-plan/
+!/auto-fix/
+!/checkpoint/
+!/code-review/
+!/coding-process/
+!/create-pull-request/
+!/garden-search/
+!/garden-write-inbox/
+!/get-pr-review/
+!/implement-tdd-flow/
+!/pr-ready-code-explainer/
+!/pull-request/
+!/report-and-close-issue/
+
+# Local-only files inside published skills
+**/.DS_Store
 /garden-search/config.json
