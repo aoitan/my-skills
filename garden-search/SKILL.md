@@ -13,12 +13,24 @@ Use this precedence:
 
 1. A root explicitly supplied by the user
 2. `GARDEN_ROOT`
-3. `/path/to/garden/content`
+3. `config.json` beside this `SKILL.md`
 
-Pass the selected root to every command with `--root`. Treat the spelling `gurden` as the current local path, not as a general convention.
+For local setup, copy `config.example.json` to `config.json` and replace the
+placeholder with the actual Quartz content directory. Keep `config.json` local;
+it is ignored by Git. Use `--config /path/to/config.json` only when the settings
+file must live elsewhere.
+
+Use the resolved root consistently throughout one exploration. Pass `--root`
+only when overriding the environment or local configuration.
 
 ```bash
 python3 scripts/garden_search.py --root /path/to/content <command> [arguments]
+```
+
+After local configuration, omit `--root`:
+
+```bash
+python3 scripts/garden_search.py <command> [arguments]
 ```
 
 All node and directory arguments are relative to the root. Do not pass absolute paths. The script rejects paths that resolve outside the root.
@@ -42,30 +54,30 @@ Before making a substantive claim from a node, retrieve at least its `summary`. 
 
 ```bash
 # Directory entry point and its direct children
-python3 scripts/garden_search.py --root "$GARDEN_ROOT" list .
+python3 scripts/garden_search.py list .
 
 # Special index.md for a directory
-python3 scripts/garden_search.py --root "$GARDEN_ROOT" index projects
+python3 scripts/garden_search.py index projects
 
 # Front matter only
-python3 scripts/garden_search.py --root "$GARDEN_ROOT" metadata inbox/example.md
+python3 scripts/garden_search.py metadata inbox/example.md
 
 # Wikilinks and Markdown links, excluding fenced code
-python3 scripts/garden_search.py --root "$GARDEN_ROOT" links inbox/example.md
+python3 scripts/garden_search.py links inbox/example.md
 
 # Metadata, stored description or extracted opening paragraph, and links
-python3 scripts/garden_search.py --root "$GARDEN_ROOT" summary inbox/example.md
+python3 scripts/garden_search.py summary inbox/example.md
 
 # Markdown body without front matter
-python3 scripts/garden_search.py --root "$GARDEN_ROOT" content inbox/example.md
+python3 scripts/garden_search.py content inbox/example.md
 
 # Explicit garden-wide candidate searches
-python3 scripts/garden_search.py --root "$GARDEN_ROOT" find-type principle
-python3 scripts/garden_search.py --root "$GARDEN_ROOT" find-tag kelpie
-python3 scripts/garden_search.py --root "$GARDEN_ROOT" backlinks 'Target note title'
+python3 scripts/garden_search.py find-type principle
+python3 scripts/garden_search.py find-tag kelpie
+python3 scripts/garden_search.py backlinks 'Target note title'
 
 # Bounded context from nodes already selected by the agent
-python3 scripts/garden_search.py --root "$GARDEN_ROOT" context \
+python3 scripts/garden_search.py context \
   path/to/principle.md path/to/decision.md --max-chars 12000
 ```
 

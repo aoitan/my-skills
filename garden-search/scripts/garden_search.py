@@ -12,7 +12,8 @@ from pathlib import Path
 from typing import Any, Iterable
 
 
-DEFAULT_ROOT = Path("/path/to/gurden/content")
+DEFAULT_CONFIG = Path(__file__).resolve().parents[1] / "config.json"
+CONFIG_ROOT_KEY = "garden_root"
 WIKILINK_RE = re.compile(r"(?<!!)\[\[([^\[\]]+?)\]\]")
 MARKDOWN_LINK_RE = re.compile(r"(?<!!)\[([^\]]+)\]\(([^)]+)\)")
 FENCE_RE = re.compile(r"^\s*(```|~~~)")
@@ -28,9 +29,32 @@ def emit_json(value: Any) -> None:
     print(json.dumps(value, ensure_ascii=False, indent=2))
 
 
-def root_path(raw: str | None) -> Path:
+def configured_root(config_path: Path) -> str:
+    if not config_path.is_file():
+        raise GardenError(
+            "garden root is not configured; pass --root, set GARDEN_ROOT, "
+            f"or create {config_path} from config.example.json"
+        )
+    try:
+        config = json.loads(config_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        raise GardenError(f"invalid JSON in garden config {config_path}: {exc.msg}") from exc
+    if not isinstance(config, dict):
+        raise GardenError(f"garden config must be a JSON object: {config_path}")
+    value = config.get(CONFIG_ROOT_KEY)
+    if not isinstance(value, str) or not value.strip():
+        raise GardenError(
+            f"garden config must define a non-empty {CONFIG_ROOT_KEY!r}: {config_path}"
+        )
+    return value
+
+
+def root_path(raw: str | None, config: str | None = None) -> Path:
     value = raw or os.environ.get("GARDEN_ROOT")
-    root = Path(value).expanduser() if value else DEFAULT_ROOT
+    if not value:
+        config_path = Path(config).expanduser() if config else DEFAULT_CONFIG
+        value = configured_root(config_path)
+    root = Path(value).expanduser()
     root = root.resolve()
     if not root.is_dir():
         raise GardenError(f"garden root is not a directory: {root}")
@@ -346,7 +370,14 @@ def command_context(root: Path, raw_nodes: list[str], max_chars: int) -> None:
 
 def parser() -> argparse.ArgumentParser:
     result = argparse.ArgumentParser(description=__doc__)
-    result.add_argument("--root", help="Garden content root (defaults to GARDEN_ROOT, then the local Quartz path)")
+    result.add_argument(
+        "--root",
+        help="Garden content root (defaults to GARDEN_ROOT, then config.json)",
+    )
+    result.add_argument(
+        "--config",
+        help="Garden config path (defaults to config.json beside SKILL.md)",
+    )
     subparsers = result.add_subparsers(dest="command", required=True)
     for name, help_text in (("list", "list a directory entry point"), ("index", "read a directory index")):
         command = subparsers.add_parser(name, help=help_text)
@@ -374,7 +405,7 @@ def parser() -> argparse.ArgumentParser:
 def main() -> int:
     args = parser().parse_args()
     try:
-        root = root_path(args.root)
+        root = root_path(args.root, args.config)
         if args.command == "list":
             command_list(root, args.directory)
         elif args.command == "index":
