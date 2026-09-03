@@ -1,7 +1,7 @@
 interface:
   display_name: "Garden Write Inbox"
-  short_description: "会話の庭候補をQuartz Inboxへ安全に保存"
-  default_prompt: "Use $garden-write-inbox to save this conversation as a new Quartz Inbox note."
+  short_description: "会話の庭候補をTerrarium Inboxへ安全に保存"
+  default_prompt: "Use $garden-write-inbox to save this conversation as a new Markdown seed note in ~/workspace/terrarium/inbox/."
 
 policy:
   allow_implicit_invocation: false

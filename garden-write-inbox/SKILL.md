@@ -1,16 +1,16 @@
 ---
 name: garden-write-inbox
-description: Save a user-approved conversation topic as one new Markdown seed note in a connected Quartz digital-garden content/inbox folder. Use only when the user explicitly invokes this skill or explicitly asks to write, export, or save the current discussion to the garden or Inbox. Do not use it merely to suggest garden candidates, judge their value, publish notes, or reorganize existing garden content.
+description: Save a user-approved conversation topic as one new Markdown seed note in the current Terrarium digital-garden Inbox. Use only when the user explicitly invokes this skill or explicitly asks to write, export, or save the current discussion to the garden or Inbox. Do not use it merely to suggest garden candidates, judge their value, publish notes, or reorganize existing garden content.
 ---
 
-# Write to the garden Inbox
+# Write to the Terrarium Inbox
 
-Write one conversation-derived seed note to the connected Quartz `content/inbox/` folder.
+Write one conversation-derived seed note to the current Garden Inbox at `~/workspace/terrarium/inbox/`.
 
 ## Boundaries
 
 - Treat the user's value judgment and save request as authoritative; do not re-evaluate whether the topic deserves saving.
-- Operate only inside the connected `content/inbox/` directory. If that directory is unavailable or ambiguous, stop and report the missing access.
+- Operate only inside `~/workspace/terrarium/inbox/`. If that directory is unavailable or ambiguous, stop and report the missing access.
 - Create at most one new `.md` file per invocation.
 - Never modify, overwrite, delete, move, or rename an existing file, including `index.md`.
 - Do not publish, promote, merge, deduplicate, retag, or reorganize notes.
