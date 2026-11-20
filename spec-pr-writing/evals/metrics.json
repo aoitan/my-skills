@@ -1,0 +1,297 @@
+{
+  "outputs": 24,
+  "pairs": 12,
+  "totals": {
+    "control": {
+      "outputs": 12,
+      "characters": 4073,
+      "echo": 0,
+      "process_guard": 0,
+      "anticipation": 0,
+      "missing_or_changed": 0,
+      "fabrications": 0
+    },
+    "skill": {
+      "outputs": 12,
+      "characters": 3072,
+      "echo": 0,
+      "process_guard": 0,
+      "anticipation": 0,
+      "missing_or_changed": 0,
+      "fabrications": 0
+    }
+  },
+  "readability_preferences": {
+    "control": 0,
+    "skill": 3,
+    "tie": 9
+  },
+  "character_reduction_fraction": 0.24576479253621408,
+  "records": [
+    {
+      "repeat": 1,
+      "case": "spec-edit",
+      "reason": "両方ともS1〜S8を保持し、会話的な前置き・作業姿勢・根拠のない将来案を除いている。Bは保存操作とエラー条件を一つの節で追え、Aにある保存内容と再適用の説明の反復が少ないため、わずかに読みやすい。Aの節分けも妥当で、不要文章の件数には差がない。",
+      "control": {
+        "characters": 520,
+        "echo": 0,
+        "process_guard": 0,
+        "anticipation": 0,
+        "missing_or_changed": 0,
+        "fabrications": 0
+      },
+      "skill": {
+        "characters": 331,
+        "echo": 0,
+        "process_guard": 0,
+        "anticipation": 0,
+        "missing_or_changed": 0,
+        "fabrications": 0
+      },
+      "preference": "skill"
+    },
+    {
+      "repeat": 1,
+      "case": "pr-edit",
+      "reason": "両方ともP1〜P6を保持する。Aは三段落で問題・変更、制約、検証が分かれ、Bは同じ情報を見出しと箇条書きで示す。この分量ではどちらもレビューに必要な情報に容易に到達できる。別タブ送信の制約とSafari未確認は必要情報であり、先回りの注意ではない。",
+      "skill": {
+        "characters": 191,
+        "echo": 0,
+        "process_guard": 0,
+        "anticipation": 0,
+        "missing_or_changed": 0,
+        "fabrications": 0
+      },
+      "control": {
+        "characters": 210,
+        "echo": 0,
+        "process_guard": 0,
+        "anticipation": 0,
+        "missing_or_changed": 0,
+        "fabrications": 0
+      },
+      "preference": "tie"
+    },
+    {
+      "repeat": 1,
+      "case": "spec-draft",
+      "reason": "両方ともD1〜D9を保持し、実装や公開をしないという会話上の指定を文書へ復唱していない。Aは権限・形式・件数境界・失敗時・未決事項を一度ずつ明示し、判断に必要な情報が揃う。Bの受入条件は根拠のある要件の再掲で違反ではないが、本文のほぼ全項目を繰り返しており、この依頼ではAの方が重複を避けて追いやすい。Bの10,000件ちょうどの扱いは「超えたら拒否」から自然に導かれる境界の明示で、新しい断定とは扱わない。",
+      "skill": {
+        "characters": 320,
+        "echo": 0,
+        "process_guard": 0,
+        "anticipation": 0,
+        "missing_or_changed": 0,
+        "fabrications": 0
+      },
+      "control": {
+        "characters": 569,
+        "echo": 0,
+        "process_guard": 0,
+        "anticipation": 0,
+        "missing_or_changed": 0,
+        "fabrications": 0
+      },
+      "preference": "skill"
+    },
+    {
+      "repeat": 1,
+      "case": "pr-draft",
+      "reason": "両方ともN1〜N7を過不足なく保持し、原因、undefinedだけへの既定値適用、既存値とデータ移行の扱い、確認範囲が読み取れる。Aは見出しとコード表記で探しやすく、Bも三段落の対応が明確で十分読みやすい。見出し数や短さだけで優劣を付ける差ではない。",
+      "control": {
+        "characters": 256,
+        "echo": 0,
+        "process_guard": 0,
+        "anticipation": 0,
+        "missing_or_changed": 0,
+        "fabrications": 0
+      },
+      "skill": {
+        "characters": 214,
+        "echo": 0,
+        "process_guard": 0,
+        "anticipation": 0,
+        "missing_or_changed": 0,
+        "fabrications": 0
+      },
+      "preference": "tie"
+    },
+    {
+      "repeat": 1,
+      "case": "spec-preserve",
+      "reason": "両方とも指定された三見出しとG2〜G8を保持し、所有者限定、直接要求の403、完全一致と空白、ジョブ時の409と不変性、復元不可、監査ログ保持、リリース前の未決事項解消が明確。Aの箇条書きとBの段落分けはいずれも条件を区別できる。これらは製品仕様と必要な未決事項であり、作業姿勢や一般的な注意として数えない。",
+      "control": {
+        "characters": 263,
+        "echo": 0,
+        "process_guard": 0,
+        "anticipation": 0,
+        "missing_or_changed": 0,
+        "fabrications": 0
+      },
+      "skill": {
+        "characters": 251,
+        "echo": 0,
+        "process_guard": 0,
+        "anticipation": 0,
+        "missing_or_changed": 0,
+        "fabrications": 0
+      },
+      "preference": "tie"
+    },
+    {
+      "repeat": 1,
+      "case": "pr-preserve",
+      "reason": "両方とも指定された五見出しとR2〜R8を保持し、条件付き再試行、合意済み対象外、検証の限界、既知不具合と次PR予定を伝えている。Aは確認事項を箇条書きにし、Bは短い段落にまとめているが、判断のしやすさに大きな差はない。Aの再試行条件も文脈全体で429とRetry-Afterの存在に限定されており、意味の変更とは扱わない。次PR予定や測定結果なしは資料にある必要情報で、先回り案ではない。",
+      "control": {
+        "characters": 253,
+        "echo": 0,
+        "process_guard": 0,
+        "anticipation": 0,
+        "missing_or_changed": 0,
+        "fabrications": 0
+      },
+      "skill": {
+        "characters": 236,
+        "echo": 0,
+        "process_guard": 0,
+        "anticipation": 0,
+        "missing_or_changed": 0,
+        "fabrications": 0
+      },
+      "preference": "tie"
+    },
+    {
+      "repeat": 2,
+      "case": "spec-edit",
+      "reason": "両方ともS1〜S8を保持し、会話的な前置き、作業姿勢の宣言、根拠のない将来案を除いている。Aは保存条件と受入条件を分け、同名上書き・新規保存上限・共有端末での保持も明確。Bは情報の所在が細かく分かれる一方、再適用、再読み込み保持、上書き取消時保持が複数箇所に重なる。この規模ではAの構成で判断に必要な情報に到達でき、重複が少ないためAを選ぶ。Bの重複は違反カテゴリに該当する主張ではない。",
+      "skill": {
+        "characters": 308,
+        "echo": 0,
+        "process_guard": 0,
+        "anticipation": 0,
+        "missing_or_changed": 0,
+        "fabrications": 0
+      },
+      "control": {
+        "characters": 537,
+        "echo": 0,
+        "process_guard": 0,
+        "anticipation": 0,
+        "missing_or_changed": 0,
+        "fabrications": 0
+      },
+      "preference": "skill"
+    },
+    {
+      "repeat": 2,
+      "case": "pr-edit",
+      "reason": "P1〜P6はいずれも保持されている。Aは背景・変更・制約・確認を見出しで探しやすく、Bも短い三段落で同じ区分が明確である。別タブ送信を防げない制約とSafari未確認も両方で見つけられるため、判断のしやすさに実質的な差を認めない。サーバー側の未変更は実際の影響範囲の記述であり、作業姿勢の宣言には数えない。",
+      "control": {
+        "characters": 227,
+        "echo": 0,
+        "process_guard": 0,
+        "anticipation": 0,
+        "missing_or_changed": 0,
+        "fabrications": 0
+      },
+      "skill": {
+        "characters": 197,
+        "echo": 0,
+        "process_guard": 0,
+        "anticipation": 0,
+        "missing_or_changed": 0,
+        "fabrications": 0
+      },
+      "preference": "tie"
+    },
+    {
+      "repeat": 2,
+      "case": "spec-draft",
+      "reason": "両方ともD1〜D9を保持し、件数上限、403、422と指定メッセージ、失敗時のデータ不変、未決定の応答時間目標を明確にしている。Aの箇条書きとBの件数表はいずれも境界条件を読み取れる。Bの1〜10,000件の行は、全注文を対象とし10,000件超だけを拒否するメモから通常時の動作を明示したもので、新しい保証とは扱わない。ヘッダーと列名の対応も資料の列指定とヘッダー行の記述の自然な整理であり、違反にしない。",
+      "skill": {
+        "characters": 323,
+        "echo": 0,
+        "process_guard": 0,
+        "anticipation": 0,
+        "missing_or_changed": 0,
+        "fabrications": 0
+      },
+      "control": {
+        "characters": 397,
+        "echo": 0,
+        "process_guard": 0,
+        "anticipation": 0,
+        "missing_or_changed": 0,
+        "fabrications": 0
+      },
+      "preference": "tie"
+    },
+    {
+      "repeat": 2,
+      "case": "pr-draft",
+      "reason": "N1〜N7を両方とも保持し、不具合・原因・変更、保存値ごとの結果、検証と未確認事項が対応している。Aは段落で、Bは見出しと箇条書きで整理しているが、この情報量ではどちらも追いやすい。保存済みデータの書き換え不要は変更の実際の条件であり、作業姿勢の宣言ではない。依頼にない提案や検証の断定もない。",
+      "skill": {
+        "characters": 216,
+        "echo": 0,
+        "process_guard": 0,
+        "anticipation": 0,
+        "missing_or_changed": 0,
+        "fabrications": 0
+      },
+      "control": {
+        "characters": 264,
+        "echo": 0,
+        "process_guard": 0,
+        "anticipation": 0,
+        "missing_or_changed": 0,
+        "fabrications": 0
+      },
+      "preference": "tie"
+    },
+    {
+      "repeat": 2,
+      "case": "spec-preserve",
+      "reason": "両方とも指定の三見出しとG2〜G8の全条件を保持している。Aは対象がワークスペースであることを一部明示し、Bは文脈上明らかな対象を省略しているが、解釈や条件は変わらない。所有者以外の403、空白を除去しない照合、409時の両データ不変、復元不可、監査ログ保持、リリース前の決定必須はいずれも製品仕様として必要であり、不要文章には該当しない。",
+      "control": {
+        "characters": 283,
+        "echo": 0,
+        "process_guard": 0,
+        "anticipation": 0,
+        "missing_or_changed": 0,
+        "fabrications": 0
+      },
+      "skill": {
+        "characters": 250,
+        "echo": 0,
+        "process_guard": 0,
+        "anticipation": 0,
+        "missing_or_changed": 0,
+        "fabrications": 0
+      },
+      "preference": "tie"
+    },
+    {
+      "repeat": 2,
+      "case": "pr-preserve",
+      "reason": "両方とも指定の五見出しとR2〜R8を保持している。Aは段落中心、Bは確認事項を箇条書きにしており、どちらも検証の限界と既知不具合が見える。Bの背景は再試行追加を変更欄より先に述べるが、軽い重複にとどまり実質的な優劣とはしない。合意済み対象外は実際の変更範囲、次PR予定は資料に記載された予定であり、作業宣言や根拠のない先回りとして数えない。",
+      "skill": {
+        "characters": 235,
+        "echo": 0,
+        "process_guard": 0,
+        "anticipation": 0,
+        "missing_or_changed": 0,
+        "fabrications": 0
+      },
+      "control": {
+        "characters": 294,
+        "echo": 0,
+        "process_guard": 0,
+        "anticipation": 0,
+        "missing_or_changed": 0,
+        "fabrications": 0
+      },
+      "preference": "tie"
+    }
+  ],
+  "character_definition": "空白とwritingブロックの表示用囲みを除くUnicode文字数。Markdown記号は含む。"
+}

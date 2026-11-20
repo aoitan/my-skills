@@ -1,0 +1,116 @@
+[
+  {
+    "id": "spec-edit",
+    "A": {
+      "echo": [],
+      "process_guard": [],
+      "anticipation": [],
+      "missing_or_changed": [],
+      "fabrications": []
+    },
+    "B": {
+      "echo": [],
+      "process_guard": [],
+      "anticipation": [],
+      "missing_or_changed": [],
+      "fabrications": []
+    },
+    "preference": "A",
+    "reason": "両方ともS1〜S8を保持し、会話的な前置き、作業姿勢の宣言、根拠のない将来案を除いている。Aは保存条件と受入条件を分け、同名上書き・新規保存上限・共有端末での保持も明確。Bは情報の所在が細かく分かれる一方、再適用、再読み込み保持、上書き取消時保持が複数箇所に重なる。この規模ではAの構成で判断に必要な情報に到達でき、重複が少ないためAを選ぶ。Bの重複は違反カテゴリに該当する主張ではない。"
+  },
+  {
+    "id": "pr-edit",
+    "A": {
+      "echo": [],
+      "process_guard": [],
+      "anticipation": [],
+      "missing_or_changed": [],
+      "fabrications": []
+    },
+    "B": {
+      "echo": [],
+      "process_guard": [],
+      "anticipation": [],
+      "missing_or_changed": [],
+      "fabrications": []
+    },
+    "preference": "tie",
+    "reason": "P1〜P6はいずれも保持されている。Aは背景・変更・制約・確認を見出しで探しやすく、Bも短い三段落で同じ区分が明確である。別タブ送信を防げない制約とSafari未確認も両方で見つけられるため、判断のしやすさに実質的な差を認めない。サーバー側の未変更は実際の影響範囲の記述であり、作業姿勢の宣言には数えない。"
+  },
+  {
+    "id": "spec-draft",
+    "A": {
+      "echo": [],
+      "process_guard": [],
+      "anticipation": [],
+      "missing_or_changed": [],
+      "fabrications": []
+    },
+    "B": {
+      "echo": [],
+      "process_guard": [],
+      "anticipation": [],
+      "missing_or_changed": [],
+      "fabrications": []
+    },
+    "preference": "tie",
+    "reason": "両方ともD1〜D9を保持し、件数上限、403、422と指定メッセージ、失敗時のデータ不変、未決定の応答時間目標を明確にしている。Aの箇条書きとBの件数表はいずれも境界条件を読み取れる。Bの1〜10,000件の行は、全注文を対象とし10,000件超だけを拒否するメモから通常時の動作を明示したもので、新しい保証とは扱わない。ヘッダーと列名の対応も資料の列指定とヘッダー行の記述の自然な整理であり、違反にしない。"
+  },
+  {
+    "id": "pr-draft",
+    "A": {
+      "echo": [],
+      "process_guard": [],
+      "anticipation": [],
+      "missing_or_changed": [],
+      "fabrications": []
+    },
+    "B": {
+      "echo": [],
+      "process_guard": [],
+      "anticipation": [],
+      "missing_or_changed": [],
+      "fabrications": []
+    },
+    "preference": "tie",
+    "reason": "N1〜N7を両方とも保持し、不具合・原因・変更、保存値ごとの結果、検証と未確認事項が対応している。Aは段落で、Bは見出しと箇条書きで整理しているが、この情報量ではどちらも追いやすい。保存済みデータの書き換え不要は変更の実際の条件であり、作業姿勢の宣言ではない。依頼にない提案や検証の断定もない。"
+  },
+  {
+    "id": "spec-preserve",
+    "A": {
+      "echo": [],
+      "process_guard": [],
+      "anticipation": [],
+      "missing_or_changed": [],
+      "fabrications": []
+    },
+    "B": {
+      "echo": [],
+      "process_guard": [],
+      "anticipation": [],
+      "missing_or_changed": [],
+      "fabrications": []
+    },
+    "preference": "tie",
+    "reason": "両方とも指定の三見出しとG2〜G8の全条件を保持している。Aは対象がワークスペースであることを一部明示し、Bは文脈上明らかな対象を省略しているが、解釈や条件は変わらない。所有者以外の403、空白を除去しない照合、409時の両データ不変、復元不可、監査ログ保持、リリース前の決定必須はいずれも製品仕様として必要であり、不要文章には該当しない。"
+  },
+  {
+    "id": "pr-preserve",
+    "A": {
+      "echo": [],
+      "process_guard": [],
+      "anticipation": [],
+      "missing_or_changed": [],
+      "fabrications": []
+    },
+    "B": {
+      "echo": [],
+      "process_guard": [],
+      "anticipation": [],
+      "missing_or_changed": [],
+      "fabrications": []
+    },
+    "preference": "tie",
+    "reason": "両方とも指定の五見出しとR2〜R8を保持している。Aは段落中心、Bは確認事項を箇条書きにしており、どちらも検証の限界と既知不具合が見える。Bの背景は再試行追加を変更欄より先に述べるが、軽い重複にとどまり実質的な優劣とはしない。合意済み対象外は実際の変更範囲、次PR予定は資料に記載された予定であり、作業宣言や根拠のない先回りとして数えない。"
+  }
+]

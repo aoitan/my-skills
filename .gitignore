@@ -14,12 +14,14 @@
 !/coding-process/
 !/create-pull-request/
 !/garden-search/
+!/garden-auto-capture/
 !/garden-write-inbox/
 !/get-pr-review/
 !/implement-tdd-flow/
 !/pr-ready-code-explainer/
 !/pull-request/
 !/report-and-close-issue/
+!/spec-pr-writing/
 
 # Local-only files inside published skills
 **/.DS_Store

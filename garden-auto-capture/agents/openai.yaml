@@ -1,0 +1,7 @@
+interface:
+  display_name: "Garden Auto Capture"
+  short_description: "会話や作業から検索可能な痕跡を機械Inboxへ自動保存"
+  default_prompt: "Use $garden-auto-capture to capture source-backed traces from the current conversation or work context into the Terrarium machine Inbox."
+
+policy:
+  allow_implicit_invocation: true

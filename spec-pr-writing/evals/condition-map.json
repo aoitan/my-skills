@@ -1,0 +1,174 @@
+{
+  "randomization_seed": 20261119,
+  "skill_sha256": "db43dfbb3dbad71f32752e4750a76c4ac1188d5d5151299ee8642063baf5b8b7",
+  "pairs": [
+    {
+      "repeat": 1,
+      "id": "spec-edit",
+      "A": {
+        "condition": "control",
+        "path": "runs/r1-control/spec-edit.md",
+        "sha256": "3b5470430f2d2686a53e90e464265fd0e57f6b6707b67a8aefe3c02d2f609699"
+      },
+      "B": {
+        "condition": "skill",
+        "path": "runs/r1-skill/spec-edit.md",
+        "sha256": "7164e1f96743cd1a5cd61cf2fb07ebbf2012abdca8fe4aefbe6da1fe63f340b3"
+      }
+    },
+    {
+      "repeat": 1,
+      "id": "pr-edit",
+      "A": {
+        "condition": "skill",
+        "path": "runs/r1-skill/pr-edit.md",
+        "sha256": "3fd97acebee934858bdf66c291b36c8d9151733f99409511eec7e78eac022da6"
+      },
+      "B": {
+        "condition": "control",
+        "path": "runs/r1-control/pr-edit.md",
+        "sha256": "c4fc26490a7507797f1bda696944c972cb8944d0e77a36ef761b7784d8023fb2"
+      }
+    },
+    {
+      "repeat": 1,
+      "id": "spec-draft",
+      "A": {
+        "condition": "skill",
+        "path": "runs/r1-skill/spec-draft.md",
+        "sha256": "b4a45d6286d5033d04847e63472d7d1706d06952196cedcc57a698521f59c1bb"
+      },
+      "B": {
+        "condition": "control",
+        "path": "runs/r1-control/spec-draft.md",
+        "sha256": "d7473c627f7d9cd5b65fca0e84709893a0c3a714a9b67b6a33edbf02b2cf6936"
+      }
+    },
+    {
+      "repeat": 1,
+      "id": "pr-draft",
+      "A": {
+        "condition": "control",
+        "path": "runs/r1-control/pr-draft.md",
+        "sha256": "14b0999c87f05ea8c642a06bc9fbea3b01233eebc7dc995e1c8499df4b5657a8"
+      },
+      "B": {
+        "condition": "skill",
+        "path": "runs/r1-skill/pr-draft.md",
+        "sha256": "9600fde05a37e49977016c43e0c8f0e3159dad9d56222be5445320d560eb8ba3"
+      }
+    },
+    {
+      "repeat": 1,
+      "id": "spec-preserve",
+      "A": {
+        "condition": "control",
+        "path": "runs/r1-control/spec-preserve.md",
+        "sha256": "6a1de69d25e166beba6d30f43733e01d3ae2f295ff425e7ce52c5cdf79509de3"
+      },
+      "B": {
+        "condition": "skill",
+        "path": "runs/r1-skill/spec-preserve.md",
+        "sha256": "164eeefe4ddc185dd51e4210c5f9832fd820d25055d704c9dfb35251b4f8f155"
+      }
+    },
+    {
+      "repeat": 1,
+      "id": "pr-preserve",
+      "A": {
+        "condition": "control",
+        "path": "runs/r1-control/pr-preserve.md",
+        "sha256": "162295dc67b07b1e50dbb0e94786aa05df5d4653cac9d92611dd3e04fdfb00cc"
+      },
+      "B": {
+        "condition": "skill",
+        "path": "runs/r1-skill/pr-preserve.md",
+        "sha256": "94bf89b94f7b04f2c583b41a7f8ce1c1b2ea0b5ffaf28f78f559f2f764ddee43"
+      }
+    },
+    {
+      "repeat": 2,
+      "id": "spec-edit",
+      "A": {
+        "condition": "skill",
+        "path": "runs/r2-skill/spec-edit.md",
+        "sha256": "00045a8f50d1e6e2a061241b6301c0cd43842a2bfb046a074b14208a511365ee"
+      },
+      "B": {
+        "condition": "control",
+        "path": "runs/r2-control/spec-edit.md",
+        "sha256": "ebacb60da30dad3e4df4cef61fda16d4763aa61d24d0853b888788e0513662d5"
+      }
+    },
+    {
+      "repeat": 2,
+      "id": "pr-edit",
+      "A": {
+        "condition": "control",
+        "path": "runs/r2-control/pr-edit.md",
+        "sha256": "409c57ea557a48f05eeeb34c825372b40a4f7823ca524d0ce6d8f150f2ba5201"
+      },
+      "B": {
+        "condition": "skill",
+        "path": "runs/r2-skill/pr-edit.md",
+        "sha256": "5d0519b1f4a6b21bdb97ff352d5b4c82f1fc83419e268e96cfc2df6418973d56"
+      }
+    },
+    {
+      "repeat": 2,
+      "id": "spec-draft",
+      "A": {
+        "condition": "skill",
+        "path": "runs/r2-skill/spec-draft.md",
+        "sha256": "8c902ff3eef38871ca13191bec9bb46f6b960223ab1ac4b491e688ac0e55e93f"
+      },
+      "B": {
+        "condition": "control",
+        "path": "runs/r2-control/spec-draft.md",
+        "sha256": "2f33eb727bb481ffd2d1f12270cad472d2f9ca7a34ba8379de02f779af86447a"
+      }
+    },
+    {
+      "repeat": 2,
+      "id": "pr-draft",
+      "A": {
+        "condition": "skill",
+        "path": "runs/r2-skill/pr-draft.md",
+        "sha256": "80261ac428f4c113d1d1bed073faf47dc5d74d6ef1414ca7e5268b4016311411"
+      },
+      "B": {
+        "condition": "control",
+        "path": "runs/r2-control/pr-draft.md",
+        "sha256": "1321666766c71070f5b0dcd5433bdcd48d51051850729e4404bd519dda16bc2d"
+      }
+    },
+    {
+      "repeat": 2,
+      "id": "spec-preserve",
+      "A": {
+        "condition": "control",
+        "path": "runs/r2-control/spec-preserve.md",
+        "sha256": "7d2ac0a7dbe80a20e6a69e948d8c70642f23b5b84e27e3821f08430e63ee4748"
+      },
+      "B": {
+        "condition": "skill",
+        "path": "runs/r2-skill/spec-preserve.md",
+        "sha256": "54d35b3775e5739c503f230d12059c3b8829d56bca8c132258e21dffb93d2097"
+      }
+    },
+    {
+      "repeat": 2,
+      "id": "pr-preserve",
+      "A": {
+        "condition": "skill",
+        "path": "runs/r2-skill/pr-preserve.md",
+        "sha256": "884ba3f79e4deb9ecfa72c793fead611a62fb5562f3ab39a99678ecb255bf85e"
+      },
+      "B": {
+        "condition": "control",
+        "path": "runs/r2-control/pr-preserve.md",
+        "sha256": "319967bb20c0d6e7d4401f42fc14fcfca74211f5093c301efcc98bdf3da7b8a8"
+      }
+    }
+  ]
+}

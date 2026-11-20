@@ -1,0 +1,44 @@
+[
+  {
+    "id": "spec-edit",
+    "A": {"echo": [], "process_guard": [], "anticipation": [], "missing_or_changed": [], "fabrications": []},
+    "B": {"echo": [], "process_guard": [], "anticipation": [], "missing_or_changed": [], "fabrications": []},
+    "preference": "B",
+    "reason": "両方ともS1〜S8を保持し、会話的な前置き・作業姿勢・根拠のない将来案を除いている。Bは保存操作とエラー条件を一つの節で追え、Aにある保存内容と再適用の説明の反復が少ないため、わずかに読みやすい。Aの節分けも妥当で、不要文章の件数には差がない。"
+  },
+  {
+    "id": "pr-edit",
+    "A": {"echo": [], "process_guard": [], "anticipation": [], "missing_or_changed": [], "fabrications": []},
+    "B": {"echo": [], "process_guard": [], "anticipation": [], "missing_or_changed": [], "fabrications": []},
+    "preference": "tie",
+    "reason": "両方ともP1〜P6を保持する。Aは三段落で問題・変更、制約、検証が分かれ、Bは同じ情報を見出しと箇条書きで示す。この分量ではどちらもレビューに必要な情報に容易に到達できる。別タブ送信の制約とSafari未確認は必要情報であり、先回りの注意ではない。"
+  },
+  {
+    "id": "spec-draft",
+    "A": {"echo": [], "process_guard": [], "anticipation": [], "missing_or_changed": [], "fabrications": []},
+    "B": {"echo": [], "process_guard": [], "anticipation": [], "missing_or_changed": [], "fabrications": []},
+    "preference": "A",
+    "reason": "両方ともD1〜D9を保持し、実装や公開をしないという会話上の指定を文書へ復唱していない。Aは権限・形式・件数境界・失敗時・未決事項を一度ずつ明示し、判断に必要な情報が揃う。Bの受入条件は根拠のある要件の再掲で違反ではないが、本文のほぼ全項目を繰り返しており、この依頼ではAの方が重複を避けて追いやすい。Bの10,000件ちょうどの扱いは「超えたら拒否」から自然に導かれる境界の明示で、新しい断定とは扱わない。"
+  },
+  {
+    "id": "pr-draft",
+    "A": {"echo": [], "process_guard": [], "anticipation": [], "missing_or_changed": [], "fabrications": []},
+    "B": {"echo": [], "process_guard": [], "anticipation": [], "missing_or_changed": [], "fabrications": []},
+    "preference": "tie",
+    "reason": "両方ともN1〜N7を過不足なく保持し、原因、undefinedだけへの既定値適用、既存値とデータ移行の扱い、確認範囲が読み取れる。Aは見出しとコード表記で探しやすく、Bも三段落の対応が明確で十分読みやすい。見出し数や短さだけで優劣を付ける差ではない。"
+  },
+  {
+    "id": "spec-preserve",
+    "A": {"echo": [], "process_guard": [], "anticipation": [], "missing_or_changed": [], "fabrications": []},
+    "B": {"echo": [], "process_guard": [], "anticipation": [], "missing_or_changed": [], "fabrications": []},
+    "preference": "tie",
+    "reason": "両方とも指定された三見出しとG2〜G8を保持し、所有者限定、直接要求の403、完全一致と空白、ジョブ時の409と不変性、復元不可、監査ログ保持、リリース前の未決事項解消が明確。Aの箇条書きとBの段落分けはいずれも条件を区別できる。これらは製品仕様と必要な未決事項であり、作業姿勢や一般的な注意として数えない。"
+  },
+  {
+    "id": "pr-preserve",
+    "A": {"echo": [], "process_guard": [], "anticipation": [], "missing_or_changed": [], "fabrications": []},
+    "B": {"echo": [], "process_guard": [], "anticipation": [], "missing_or_changed": [], "fabrications": []},
+    "preference": "tie",
+    "reason": "両方とも指定された五見出しとR2〜R8を保持し、条件付き再試行、合意済み対象外、検証の限界、既知不具合と次PR予定を伝えている。Aは確認事項を箇条書きにし、Bは短い段落にまとめているが、判断のしやすさに大きな差はない。Aの再試行条件も文脈全体で429とRetry-Afterの存在に限定されており、意味の変更とは扱わない。次PR予定や測定結果なしは資料にある必要情報で、先回り案ではない。"
+  }
+]
