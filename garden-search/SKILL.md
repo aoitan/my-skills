@@ -39,16 +39,35 @@ All node and directory arguments are relative to the root. Do not pass absolute 
 
 Use the narrowest operation that can answer the current question:
 
-1. Run `index .` to read the garden's navigation rules.
+1. Run `index .` to read the garden's navigation rules, and `list .` to see every shelf; the root index does not list them all.
 2. Run `list <directory>` to inspect a relevant entry point.
 3. Run `metadata <node>` on likely candidates.
 4. Run `links <node>` to choose graph neighbors.
 5. Run `summary <node>` before opening a full body.
 6. Run `content <node>` only when its evidence is needed for the answer.
 
-Use `find-type`, `find-tag`, or `backlinks` only when navigation from indexes and links is insufficient. These commands intentionally scan Markdown files. Never simulate discovery by reading all bodies into the model context.
+Use `find-type`, `find-tag`, `backlinks`, or the text search below only when navigation from indexes and links is insufficient. These intentionally scan Markdown files. Never simulate discovery by reading all bodies into the model context.
 
-Before making a substantive claim from a node, retrieve at least its `summary`. If its stored description or extracted summary does not support the claim, retrieve `content`. Never treat a filename, title, directory, link target, or mere node existence as sufficient evidence.
+### Search by wording
+
+When types, tags, and indexes do not lead to the topic, find candidate paths with the installed `rg`, run from the resolved garden root. Tags are mostly English, so try both Japanese and English wording.
+
+```bash
+# Titles and descriptions first
+rg -n -i -g '*.md' -e '^(title|description):.*(キャッシュ|cache)' .
+
+# Then bodies: paths only, never body text
+rg -l -i -g '*.md' -e 'キャッシュ|cache' .
+```
+
+Narrow the wording or directory when there are more than about ten paths. Continue with `summary` on the likely ones; a match is not evidence by itself. If `rg` is unavailable, use `grep -rlE --include='*.md'`.
+
+To preview one directory, run `rg -n -g '*.md' '^(title|type|description|status):' <directory>` instead of `metadata` on every node.
+
+### Check backlinks
+
+- `backlinks` resolves links to notes, so a path, title, alias, or filename finds the same links. Check `resolved` first: several paths mean the query was ambiguous, so repeat it with a path; an empty list means no such note, and any results are dangling links with that text.
+- Confirm the context before relying on a match with `candidates` above one or with `resolution: moved-filename`, which is inferred from the filename after the linked path was not found.
 
 ## Commands
 
@@ -90,6 +109,7 @@ Commands emit JSON, except `content` and `context`, which emit Markdown text for
 - Read `decision` for the selected option, rejected alternatives, and reasons.
 - Read `project` for purpose, boundaries, and current state.
 - Read `experiment` for the question, method, observation, and next test.
+- Treat notes under `machine-inbox/` and `machine-notes/`, or with a `machine-*` status, as unreviewed. Follow them to their original source before relying on a claim, and say so when the source was not checked.
 - Use `tags` for topical discovery after stronger index or type signals.
 - Distinguish garden-derived knowledge from inference in the answer.
 - Mention uncertainty when metadata is absent, a summary is mechanically extracted, or linked nodes were not opened.

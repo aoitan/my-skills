@@ -6,8 +6,10 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import posixpath
 import re
 import sys
+import unicodedata
 from pathlib import Path
 from typing import Any, Iterable
 
@@ -321,25 +323,86 @@ def command_find(root: Path, field: str, query: str) -> None:
     emit_json({"query": {field: query}, "count": len(matches), "nodes": matches})
 
 
-def wikilink_matches(target: str, query: str) -> bool:
-    target_clean = target.removesuffix(".md").strip("/").casefold()
-    query_clean = query.removesuffix(".md").strip("/").casefold()
-    return target_clean == query_clean or Path(target_clean).name == Path(query_clean).name
+def link_key(value: str) -> str:
+    """Normalize link text, including the backslash left by `\\|` inside tables."""
+    cleaned = value.strip().removesuffix("\\").strip()
+    return unicodedata.normalize("NFC", cleaned).casefold().removesuffix(".md").strip("/")
+
+
+class LinkIndex:
+    """Resolve wikilink text to Garden nodes, preferring the most specific match."""
+
+    def __init__(self, root: Path) -> None:
+        self.nodes: list[tuple[Path, dict[str, Any], str]] = []
+        self.by_path: dict[str, str] = {}
+        self.by_suffix: dict[str, set[str]] = {}
+        self.by_alias: dict[str, set[str]] = {}
+        self.by_title: dict[str, set[str]] = {}
+        for path in markdown_files(root):
+            metadata, body = read_node(path)
+            self.nodes.append((path, metadata, body))
+            node = relative(root, path)
+            key = link_key(node)
+            names = [key]
+            if path.name.casefold() == "index.md" and path.parent != root:
+                names.append(posixpath.dirname(key))
+            for name in names:
+                self.by_path.setdefault(name, node)
+                parts = name.split("/")
+                for start in range(1, len(parts)):
+                    suffix = "/".join(parts[start:])
+                    if suffix != "index":
+                        self.by_suffix.setdefault(suffix, set()).add(node)
+            for alias in normalized_values(metadata.get("aliases")):
+                self.by_alias.setdefault(link_key(alias), set()).add(node)
+            title = metadata.get("title") or title_from_body(body)
+            if title:
+                self.by_title.setdefault(link_key(str(title)), set()).add(node)
+
+    def resolve(self, target: str, source_directory: str = "") -> tuple[set[str], str]:
+        key = link_key(target)
+        if target.strip().startswith(("./", "../")):
+            key = link_key(posixpath.normpath(posixpath.join(source_directory, target.strip())))
+        if key in self.by_path:
+            return {self.by_path[key]}, "path"
+        for table, resolution in (
+            (self.by_suffix, "path-suffix"),
+            (self.by_alias, "alias"),
+            (self.by_title, "title"),
+        ):
+            if key in table:
+                return table[key], resolution
+        if "/" in key:
+            name = posixpath.basename(key)
+            if name in self.by_suffix:
+                return self.by_suffix[name], "moved-filename"
+        return set(), "unresolved"
 
 
 def command_backlinks(root: Path, query: str) -> None:
+    index = LinkIndex(root)
+    wanted, _ = index.resolve(query)
     matches = []
-    for path in markdown_files(root):
-        _, body = read_node(path)
-        matched = [
-            link for link in extract_links(body)
-            if link["kind"] == "wikilink" and wikilink_matches(link["target"], query)
-        ]
+    for path, metadata, body in index.nodes:
+        source_directory = posixpath.dirname(relative(root, path))
+        matched = []
+        for link in extract_links(body):
+            if link["kind"] != "wikilink":
+                continue
+            found, resolution = index.resolve(link["target"], source_directory)
+            if wanted & found:
+                item: dict[str, Any] = {**link, "resolution": resolution}
+                if len(found) > 1:
+                    item["candidates"] = len(found)
+                matched.append(item)
+            elif not wanted and not found and link_key(link["target"]) == link_key(query):
+                matched.append({**link, "resolution": resolution})
         if matched:
-            item = node_metadata(root, path)
-            item["matching_links"] = matched
-            matches.append(item)
-    emit_json({"target": query, "count": len(matches), "nodes": matches})
+            title = metadata.get("title") or title_from_body(body) or path.stem
+            matches.append(
+                {"path": relative(root, path), "title": title, **metadata, "matching_links": matched}
+            )
+    emit_json({"target": query, "resolved": sorted(wanted), "count": len(matches), "nodes": matches})
 
 
 def command_context(root: Path, raw_nodes: list[str], max_chars: int) -> None:
