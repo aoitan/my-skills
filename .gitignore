@@ -3,6 +3,7 @@
 
 # Repository files
 !/.gitignore
+!/.ignore
 !/EXTERNAL_SKILLS.md
 !/README.md
 

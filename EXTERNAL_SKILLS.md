@@ -6,7 +6,7 @@
 - この一覧は参照用のスナップショットであり、Gitの除外判定には使いません。
 - Skillをこのリポジトリの公開対象へ移す場合は、出自と管理責任を確認してから `.gitignore` の許可リストへ追加します。
 
-最終確認日: 2026-08-11
+最終確認日: 2026-11-24
 
 ## Codex管理
 
@@ -38,6 +38,46 @@
 | Skill | 配置場所 | 用途 | Git管理外の理由 |
 | --- | --- | --- | --- |
 | `llm-veil` | `llm-veil/` | ローカル読取時のシークレット漏洩やプロンプトインジェクションを軽減する | 他ツールのワークフローから配置・管理するため |
+
+## 外部配布
+
+### UI/UXデザイン系
+
+| Skill | 配置場所 | 用途 | Git管理外の理由 |
+| --- | --- | --- | --- |
+| `banner-design` | `banner-design/` | SNS・広告・Web・印刷向けのバナーをデザインする | 外部配布のSkillであるため |
+| `brand` | `brand/` | ブランドボイス、ビジュアルアイデンティティ、アセットの一貫性を管理する | 外部配布のSkillであるため |
+| `design` | `design/` | ロゴ、CIP、スライド、アイコンなどのデザイン作業を包括的に扱う | 外部配布のSkillであるため |
+| `design-system` | `design-system/` | デザイントークン、コンポーネント仕様、スライドを設計する | 外部配布のSkillであるため |
+| `ui-styling` | `ui-styling/` | shadcn/uiとTailwind CSSでUIを構築・スタイリングする | 外部配布のSkillであるため |
+| `ui-ux-pro-max` | `ui-ux-pro-max/` | 検索可能なデータをもとにUI/UXを設計・レビュー・改善する | 外部配布のSkillであるため |
+
+### difit
+
+| Skill | 配置場所 | 用途 | Git管理外の理由 |
+| --- | --- | --- | --- |
+| `difit` | `difit/` | コード変更後にdifitでユーザーへレビューを依頼する | 外部配布のSkillであるため |
+| `difit-review` | `difit-review/` | 差分をレビューし、指摘をdifit上のコメントとして表示する | 外部配布のSkillであるため |
+
+### Herdr
+
+| Skill | 配置場所 | 用途 | Git管理外の理由 |
+| --- | --- | --- | --- |
+| `herdr` | `herdr/` | コーディングエージェント向け端末マルチプレクサHerdrを操作する | 外部配布のSkillであるため |
+
+### abagames/agentic-gamedev-skills
+
+| Skill | 配置場所 | 用途 | Git管理外の理由 |
+| --- | --- | --- | --- |
+| `exploring-game-design-space` | `exploring-game-design-space/` | ゲームデザイン案を幅広く生成し、検証可能な仮説に絞る | 外部配布のSkillであるため |
+| `stress-testing-game-concepts` | `stress-testing-game-concepts/` | ゲーム案やルールの破綻を敵対的に検証する | 外部配布のSkillであるため |
+
+## 出自未確認
+
+| Skill | 配置場所 | 用途 | Git管理外の理由 |
+| --- | --- | --- | --- |
+| `whywhy` | `whywhy/` | 問題を因果ツリーで分析し、根本原因と打ち手を導く | Xで流れていたものに手を加えて使っているので出どころ不明 |
+
 
 ## Skill以外の管理対象外ディレクトリ
 
