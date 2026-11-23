@@ -1,0 +1,6 @@
+# Let pi discover skill roots without changing Git's tracking policy.
+!*/
+!**/SKILL.md
+
+# Codex system skills are intentionally not exposed to pi.
+.system/
